@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
-        <Navbar />
+        <Navbar setLanguage={setLanguage} />
 
         <Switch>
           <Route exact path="/" component={Home} />
