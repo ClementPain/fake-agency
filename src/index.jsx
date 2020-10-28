@@ -11,6 +11,7 @@ import {
 
 import { IntlProvider } from 'react-intl';
 import messagesFr from './translation/fr';
+import messagesEn from './translation/en';
 
 import Home from './pages/Home';
 import Work from './pages/Work';
@@ -20,10 +21,11 @@ import Navbar from './components/Navbar';
 
 const messages = {
   fr: messagesFr,
+  en: messagesEn
 }; 
 
 const App = () => {
-  const [language, setLanguage] = useState('fr');
+  const [language, setLanguage] = useState('en');
 
   return (
     <Router>
