@@ -1,6 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl' ;
 
+import CaseStudy from '../components/CaseStudy';
+
 import projects from '../data/projects';
 
 const Work = () => {
@@ -14,7 +16,7 @@ const Work = () => {
       </div>
       <div className="row mt-5">
         {projects.map(project => (
-          <p className="col-md-4"><FormattedMessage id={project.title} /></p>
+          <div className="col-md-4"><CaseStudy project={project} /></div>
         ))}
       </div>
     </div>

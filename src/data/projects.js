@@ -1,7 +1,4 @@
-// Dire à quel codification de traduction correspond chaque projet. LEs traductions sont situées dans le dossier translation
-
-import React from 'react';
-import { FormattedMessage } from 'react-intl' ; 
+// Dire à quel codification de traduction correspond chaque projet. LEs traductions sont situées dans le dossier translation 
 
 const projects = [{
   name: 'PLATON',

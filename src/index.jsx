@@ -16,6 +16,7 @@ import messagesEn from './translation/en';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
+import Project from './pages/Project';
 
 import Navbar from './components/Navbar';
 
@@ -34,8 +35,9 @@ const App = () => {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/work" component={Work} />
+          <Route exact path="/work" component={Work} />
           <Route path="/about" component={About} />
+          <Route path="/work/:project" component={Project} />
         </Switch>
       </IntlProvider>
     </Router>
