@@ -25,7 +25,7 @@ const messages = {
 }; 
 
 const App = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('fr');
 
   return (
     <Router>
