@@ -9,17 +9,33 @@ import {
   Switch
 } from 'react-router-dom';
 
+import { IntlProvider } from 'react-intl';
+import messagesFr from './translation/fr';
+
 import Home from './pages/Home';
+import Work from './pages/Work';
+import About from './pages/About';
 
 import Navbar from './components/Navbar';
 
+const messages = {
+  fr: messagesFr,
+}; 
+
 const App = () => {
+  const [language, setLanguage] = useState('fr');
+
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <IntlProvider locale={language} messages={messages[language]}>
+        <Navbar />
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/work" component={Work} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </IntlProvider>
     </Router>
   );
 };
