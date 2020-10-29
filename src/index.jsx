@@ -27,7 +27,7 @@ const messages = {
 
 const App = () => {
   const [language, setLanguage] = useState('fr');
-
+  
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
