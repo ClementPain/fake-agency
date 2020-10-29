@@ -7,6 +7,11 @@ import './index.scss';
 const ButtonLanguage = ({setLanguage, languages}) => {
   const flags = { fr: frFlag, en: enFlag };
 
+  const handleLanguages = (languageChosen) => {
+    setLanguage(languageChosen);
+    localStorage.setItem('language', languageChosen);
+  };
+
   return (
   <ul className="navbar-nav">
     { languages.map(language => (
@@ -14,7 +19,7 @@ const ButtonLanguage = ({setLanguage, languages}) => {
           <img
            className="nav-link flags-img"
            src={flags[language]}
-           onClick={() => setLanguage(language)}
+           onClick={() => handleLanguages(language)}
            alt={language}
           />
       </li>

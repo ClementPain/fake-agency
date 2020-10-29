@@ -26,8 +26,8 @@ const messages = {
 }; 
 
 const App = () => {
-  const [language, setLanguage] = useState('fr');
-  
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'fr');
+
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
