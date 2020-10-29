@@ -31,14 +31,19 @@ const App = () => {
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
-        <Navbar setLanguage={setLanguage} languages={ Object.keys(messages) } />
+        <Navbar
+          setLanguage = { setLanguage }
+          languages = { Object.keys(messages) }
+        />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/work" component={Work} />
-          <Route path="/about" component={About} />
-          <Route path="/work/:project" component={Project} />
-        </Switch>
+        <div className="container-fluid mt-5">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/work" component={Work} />
+            <Route path="/about" component={About} />
+            <Route path="/work/:project" component={Project} />
+          </Switch>
+        </div>
       </IntlProvider>
     </Router>
   );
