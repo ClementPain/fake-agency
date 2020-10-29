@@ -31,7 +31,7 @@ const App = () => {
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
-        <Navbar setLanguage={setLanguage} />
+        <Navbar setLanguage={setLanguage} languages={ Object.keys(messages) } />
 
         <Switch>
           <Route exact path="/" component={Home} />

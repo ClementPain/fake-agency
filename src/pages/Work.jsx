@@ -16,7 +16,7 @@ const Work = () => {
       </div>
       <div className="row mt-5">
         {projects.map(project => (
-          <div className="col-md-4"><CaseStudy project={project} /></div>
+          <div className="col-md-4" key = { project.name }><CaseStudy project={project} /></div>
         ))}
       </div>
     </div>
