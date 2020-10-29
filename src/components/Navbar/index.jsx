@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ButtonLanguage from './ButtonLanguage';
 
-const Navbar = ({ setLanguage, languages }) => (
+const Navbar = ({ languages }) => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <Link to='/' className="navbar-brand">Fake Agency</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ const Navbar = ({ setLanguage, languages }) => (
         </li>
       </ul>
       <div className="form-inline my-2 my-lg-0">
-      <ButtonLanguage setLanguage={ setLanguage } languages={ languages } />
+      <ButtonLanguage languages={ languages } />
       </div>
 
     </div>

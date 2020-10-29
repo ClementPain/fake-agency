@@ -20,6 +20,9 @@ import Project from './pages/Project';
 
 import Navbar from './components/Navbar';
 
+import CurrentLanguageContext from './Language';
+
+
 const messages = {
   fr: messagesFr,
   en: messagesEn
@@ -27,23 +30,27 @@ const messages = {
 
 const App = () => {
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'fr');
-
+  
   return (
     <Router>
       <IntlProvider locale={language} messages={messages[language]}>
-        <Navbar
-          setLanguage = { setLanguage }
+        <CurrentLanguageContext.Provider value={{
+          language,
+          changeLanguage: (newLanguage) => setLanguage(newLanguage)
+        }}>
+          <Navbar
           languages = { Object.keys(messages) }
-        />
+          />
 
-        <div className="container-fluid mt-5">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/work" component={Work} />
-            <Route path="/about" component={About} />
-            <Route path="/work/:project" component={Project} />
-          </Switch>
-        </div>
+          <div className="container-fluid mt-5">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/work" component={Work} />
+              <Route path="/about" component={About} />
+              <Route path="/work/:project" component={Project} />
+            </Switch>
+          </div>
+         </CurrentLanguageContext.Provider>
       </IntlProvider>
     </Router>
   );
